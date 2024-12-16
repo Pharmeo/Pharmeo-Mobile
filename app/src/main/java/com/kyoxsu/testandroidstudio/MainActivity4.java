@@ -76,7 +76,6 @@ public class MainActivity4 extends AppCompatActivity
 
                 // Make the network request
                 String token = TokenManager.getInstance(null).getToken();
-                //System.out.println("MON TOKEN : "+token);
                 NetworkManager networkManager = new NetworkManager();
                 networkManager.fetchData(body, "POST", "/sendmail", token, new NetworkManager.NetworkCallback()
                 {

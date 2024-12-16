@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity
                         try
                         {
                             String data = response.toString(3);
-                            System.out.println("DATA : "+data);
+                            //System.out.println("DATA : "+data);
                             JSONObject result = new JSONObject(data);
                             TokenManager tokenManager = TokenManager.getInstance(result.optString("token"));
 
