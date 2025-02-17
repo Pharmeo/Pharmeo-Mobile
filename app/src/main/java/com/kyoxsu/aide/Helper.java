@@ -13,7 +13,7 @@ import java.lang.reflect.Method;
  * Cette classe contient les méthodes permettant de simplifier l'usage du code
  */
 //------------------------------------------------------------------------------
-public class Helper
+public abstract class Helper
 {
     /**
      * La méthode permet de basculer d'une fenêtre à l'autre. Elle simplifie le basculement.
