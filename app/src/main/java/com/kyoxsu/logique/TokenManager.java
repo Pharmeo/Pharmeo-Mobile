@@ -1,7 +1,7 @@
 package com.kyoxsu.logique;
 //------------------------------------------------------------------------------
 /**
- *
+ * Cette classe permet de gérer le token dans le code
  */
 //------------------------------------------------------------------------------
 public class TokenManager
@@ -24,6 +24,7 @@ public class TokenManager
     {
         if (instance == null)
         {
+            System.out.println("TokenManager.getInstance()");
             instance = new TokenManager(token);
         }
         return instance;

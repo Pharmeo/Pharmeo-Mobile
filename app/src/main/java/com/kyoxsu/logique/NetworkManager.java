@@ -1,14 +1,7 @@
 package com.kyoxsu.logique;
 
-// Make sure to add Internet permission in AndroidManifest.xml
-// <uses-permission android:name="android.permission.INTERNET" />
-
 import android.os.Handler;
 import android.os.Looper;
-import android.widget.Toast;
-
-import com.kyoxsu.testandroidstudio.MainActivity2;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.BufferedReader;
@@ -20,18 +13,27 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
-public class NetworkManager {
+//------------------------------------------------------------------------------
+/**
+ * Cette classe permet de gérer toutes les requêtes http
+ */
+//------------------------------------------------------------------------------
+public class NetworkManager
+{
     public static String baseUrl; // Replace with your API URL
     private final ExecutorService executorService;
     private final Handler mainHandler;
 
+    //--------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
     public NetworkManager()
     {
         this.executorService = Executors.newSingleThreadExecutor();
         this.mainHandler = new Handler(Looper.getMainLooper());
     }
 
+    //--------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
     public void fetchData(JSONObject requestBody, String method, String route, String token, final NetworkCallback callback)
     {
         executorService.execute(() -> {
@@ -101,11 +103,15 @@ public class NetworkManager {
         });
     }
 
-    // Cleanup method
-    public void cleanup() {
+    //--------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
+    public void cleanup()
+    {
         executorService.shutdown();
     }
 
+    //--------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
     // Callback interface
     public interface NetworkCallback
     {
@@ -113,6 +119,8 @@ public class NetworkManager {
         void onError(String error);
     }
 
+    //--------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
     public static void setBaseUrl(String trois, String quatre)
     {
         // http://192.168.210.87:3000
