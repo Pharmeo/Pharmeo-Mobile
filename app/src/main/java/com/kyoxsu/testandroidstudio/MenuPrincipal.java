@@ -46,37 +46,21 @@ public class MenuPrincipal extends AppCompatActivity
         setContentView(view);
 
         //----------------------------------------------------------------------
-        // --- Gestion de la liste
-        // On crée la requête
+        // --- Récupération du token
         String token = TokenManager.getInstance(null).getToken();
         this.token = token;
         NetworkManager networkManager = new NetworkManager();
-        networkManager.fetchData(null, "GET", "/medicaments", token, new NetworkManager.NetworkCallback()
-        {
-            @Override
-            public void onSuccess(JSONObject response)
-            {
-                //System.out.println(response);
-                if (response != null)
-                {
-                    data = response;
-                    afficheMedicaments(data);
-                }
-            }
 
-            @Override
-            public void onError(String error) {
-                // Handle error
-                Toast.makeText(MenuPrincipal.this,
-                        "Error: " + error,
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
+        //----------------------------------------------------------------------
+        // --- Gestion de la liste
+        JSONObject response = networkManager.fetchDataSync(null ,"GET", "/medicaments", token);
+        data = response;
+        afficheMedicaments(data);
 
         //----------------------------------------------------------------------
         // --- Gestion de la recherche
-        binding.button2.setOnClickListener(new View.OnClickListener() {
-
+        binding.button2.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v)
             {
@@ -96,7 +80,7 @@ public class MenuPrincipal extends AppCompatActivity
                 {
                     count++;
                 }
-
+                // ---
                 if (count == 1)
                 {
                     if (!name.equals(""))
@@ -114,29 +98,10 @@ public class MenuPrincipal extends AppCompatActivity
                     url+="?name="+name+"&system="+systeme+"";
                 }
 
-                System.out.println("URL : "+url);
-
-                networkManager.fetchData(null, "GET", url, token, new NetworkManager.NetworkCallback()
-                {
-                    @Override
-                    public void onSuccess(JSONObject response)
-                    {
-                        // Handle successful response
-                        if (response != null)
-                        {
-                            data = response;
-                            afficheMedicaments(data);
-                        }
-                    }
-
-                    @Override
-                    public void onError(String error) {
-                        // Handle error
-                        Toast.makeText(MenuPrincipal.this,
-                                "Error: " + error,
-                                Toast.LENGTH_SHORT).show();
-                    }
-                });
+                // --- On effectue la requête mais cette fois-ci avec des filtres
+                JSONObject response = networkManager.fetchDataSync(null ,"GET", url, token);
+                data = response;
+                afficheMedicaments(data);
             }
         });
 
@@ -206,7 +171,6 @@ public class MenuPrincipal extends AppCompatActivity
                     case 16:
                         item = "Système vasculaire";
                 }
-
                 setSelectedItem(item);
             }
 
@@ -218,6 +182,7 @@ public class MenuPrincipal extends AppCompatActivity
         });
 
         //----------------------------------------------------------------------
+        // --- Gestion de l'item selectionné
         ListView listeView = binding.listItem;
         listeView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
@@ -239,28 +204,11 @@ public class MenuPrincipal extends AppCompatActivity
                 int idMedicament = medicament.optInt("identifiant", 0);
 
                 //--------------------------------------------------------------
-                // --- Recherche d'un medicament par son nom
-                networkManager.fetchData(null, "GET", "/medicaments?name="+name, token, new NetworkManager.NetworkCallback()
-                {
-                    @Override
-                    public void onSuccess(JSONObject response)
-                    {
-                        if (response != null)
-                        {
-                            JSONArray jsonArrayMedicament = response.optJSONArray("medicaments");
-                            JSONObject medicament = jsonArrayMedicament.optJSONObject(0);
-                            showDialog(medicament, MenuPrincipal.this, idMedicament);
-                        }
-                    }
-
-                    @Override
-                    public void onError(String error)
-                    {
-                        Toast.makeText(MenuPrincipal.this,
-                                "Error: " + error,
-                                Toast.LENGTH_SHORT).show();
-                    }
-                });
+                // --- Recherche d'un médicament par son nom
+                JSONObject response = networkManager.fetchDataSync(null, "GET", "/medicaments?name="+name, token);
+                JSONArray jsonArrayMedicament = response.optJSONArray("medicaments");
+                JSONObject medicamentTrouve = jsonArrayMedicament.optJSONObject(0);
+                showDialog(medicamentTrouve, MenuPrincipal.this, idMedicament);
             }
         });
 
@@ -292,9 +240,6 @@ public class MenuPrincipal extends AppCompatActivity
                 medicament = jsonArrayMedicaments.getJSONObject(i);
 
                 String nomMedicaments = medicament.optString("nom", null);
-                //String descriptionMedicament = medicament.optString("description", null);
-                //String idMedicament = medicament.optString("identifiant", null);
-                // TODO : Ajouter la localisation du médicament
                 String infos = nomMedicaments;
                 medicaments.add(infos);
             }
@@ -325,7 +270,10 @@ public class MenuPrincipal extends AppCompatActivity
     public void showDialog(JSONObject medicament, Context context, int idMedicament)
     {
         String nom = medicament.optString("nom", null);
-        String description = medicament.optString("description", null);
+        String description = "";
+
+        description += medicament.optString("description", null);
+        description += medicament.optString("", null);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Nom : "+nom)
@@ -338,33 +286,21 @@ public class MenuPrincipal extends AppCompatActivity
                     {
                         body.put("idMedicament", idMedicament);
                         body.put("idCompte", Connexion.idCompte);
+
                     }
                     catch (JSONException e)
                     {
                         throw new RuntimeException(e);
                     }
 
+                    // --- On ajoute le favoris
                     NetworkManager networkManager = new NetworkManager();
-                    networkManager.fetchData(body, "POST", "/addfavoris", this.token, new NetworkManager.NetworkCallback()
+                    JSONObject response = networkManager.fetchDataSync(body, "POST", "/addfavoris", this.token);
+                    // TODO : modifier pour faire un test pas plus appronfondi
+                    if (response.length() > 0)
                     {
-                        @Override
-                        public void onSuccess(JSONObject response)
-                        {
-                            if (response != null)
-                            {
-                                Toast.makeText(MenuPrincipal.this, "Ajout aux favoris", Toast.LENGTH_SHORT).show();
-
-                            }
-                        }
-
-                        @Override
-                        public void onError(String error)
-                        {
-                            Toast.makeText(MenuPrincipal.this,
-                                    "Error: " + error,
-                                    Toast.LENGTH_SHORT).show();
-                        }
-                    });
+                        Toast.makeText(MenuPrincipal.this, "Ajout aux favoris", Toast.LENGTH_SHORT).show();
+                    }
                     dialog.dismiss();
                 })
                 .setNegativeButton("Retour", (dialog, which) ->

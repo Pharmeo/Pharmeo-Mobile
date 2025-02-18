@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.kyoxsu.aide.Helper;
 import com.kyoxsu.logique.NetworkManager;
@@ -12,7 +11,11 @@ import com.kyoxsu.logique.TokenManager;
 import com.kyoxsu.testandroidstudio.databinding.EnregistrementBinding;
 import org.json.JSONException;
 import org.json.JSONObject;
-
+//------------------------------------------------------------------------------
+/**
+ * Cette classe permet de s'enregistrer et de créer un compte.
+ */
+//------------------------------------------------------------------------------
 public class Enregistrement extends AppCompatActivity
 {
     EnregistrementBinding binding;
@@ -31,14 +34,13 @@ public class Enregistrement extends AppCompatActivity
         //----------------------------------------------------------------------
         // --- Gestion du bouton Enregistrer
         binding.buttonSave.setEnabled(false);
-        TextWatcher textWatcher = new TextWatcher() {
+        TextWatcher textWatcher = new TextWatcher()
+        {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            public void onTextChanged(CharSequence s, int start, int before, int count)
+            {
                 boolean isText = binding.editTextText3.getText().toString().length() > 0
                         && binding.editTextText4.getText().toString().length() > 0
                         && binding.editTextText5.getText().toString().length() > 0
@@ -51,11 +53,8 @@ public class Enregistrement extends AppCompatActivity
                         ;
                 binding.buttonSave.setEnabled(isText);
             }
-
             @Override
-            public void afterTextChanged(Editable s) {
-
-            }
+            public void afterTextChanged(Editable s) {}
         };
         binding.editTextText3.addTextChangedListener(textWatcher);
         binding.editTextText4.addTextChangedListener(textWatcher);
@@ -68,13 +67,15 @@ public class Enregistrement extends AppCompatActivity
         binding.editTextText11.addTextChangedListener(textWatcher);
 
         //----------------------------------------------------------------------
-        // Gestion du bouton enregistrer
+        // --- Gestion du bouton enregistrer
         binding.buttonSave.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                // TODO : Récupérer les informations des champs pour construite le json
+                //--------------------------------------------------------------
+                // --- Récupération de toutes les informations se trouvant dans
+                // les différents champs du formulaire
                 JSONObject body = new JSONObject();
                 try
                 {
@@ -96,36 +97,14 @@ public class Enregistrement extends AppCompatActivity
                     throw new RuntimeException(e);
                 }
 
-                String token = TokenManager.getInstance(null).getToken();
-
+                //--------------------------------------------------------------
                 // --- On crée un nouveau client
                 NetworkManager networkManager = new NetworkManager();
-                networkManager.fetchData(body, "POST", "/createClient", null, new NetworkManager.NetworkCallback()
-                {
-                    @Override
-                    public void onSuccess(JSONObject response)
-                    {
-                        try
-                        {
-                            String data = response.toString(3);
-                            System.out.println("DATA : "+data);
-                        }
-                        catch (JSONException e)
-                        {
-                            e.printStackTrace();
-                        }
-                    }
+                String token = TokenManager.getInstance(null).getToken();
+                JSONObject response = networkManager.fetchDataSync(body, "POST", "/createClient", null);
 
-                    @Override
-                    public void onError(String error)
-                    {
-                        Toast.makeText(Enregistrement.this,
-                                "Error: " + error,
-                                Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-                // --- Changement de fenêtre
+                //--------------------------------------------------------------
+                // --- On rebascule sur le menu de connexion
                 Helper.changerDeFenetre(Enregistrement.this, Connexion.class);
             }
         });

@@ -32,25 +32,21 @@ public class Connexion extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
 
-
         binding = ConnexionBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
 
-        //Helper.associerEtAfficherLayout(Connexion.this, ConnexionBinding.class);
-
+        //----------------------------------------------------------------------
+        // --- Initialisation du networkManager pour effectuer les requêtes
         NetworkManager networkManager = new NetworkManager();
 
         //----------------------------------------------------------------------
-        // Gestion du bouton Se Connecter
+        // --- Gestion du comportement bouton se Connecter
         binding.connexionBT.setEnabled(false);
         TextWatcher textWatcher = new TextWatcher()
         {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count)
             {
@@ -59,16 +55,14 @@ public class Connexion extends AppCompatActivity
                 // Activer ou désactiver le bouton en fonction du remplissage des deux champs
                 binding.connexionBT.setEnabled(isBothFieldsFilled);
             }
-
             @Override
-            public void afterTextChanged(Editable s)
-            {
-
-            }
+            public void afterTextChanged(Editable s) {}
         };
         binding.indentifiantET.addTextChangedListener(textWatcher);
         binding.motDePasseET.addTextChangedListener(textWatcher);
 
+        //----------------------------------------------------------------------
+        // --- Gestion dub outon se connecter
         binding.connexionBT.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -76,117 +70,75 @@ public class Connexion extends AppCompatActivity
             {
                 String idForm = binding.indentifiantET.getText().toString();
                 String passwordForm = binding.motDePasseET.getText().toString();
-
                 nomCompte = idForm;
-
+                // ---
                 JSONObject body = new JSONObject();
-                try {
+                try
+                {
                     body.put("name", idForm);
                     body.put("password", passwordForm);
-                } catch (JSONException e) {
+                }
+                catch (JSONException e)
+                {
                     throw new RuntimeException(e);
                 }
 
                 //--------------------------------------------------------------
                 // --- Gestion de la connexion à l'api
-                networkManager.fetchData(body, "POST", "/login", null, new NetworkManager.NetworkCallback()
+                JSONObject response = networkManager.fetchDataSync(body, "POST", "/login", null);
+                String strToken = "";
+                if (response != null && response.has("token"))
                 {
-                    @Override
-                    public void onSuccess(JSONObject response)
+                    strToken =  response.optString("token");
+                    TokenManager.getInstance(strToken);
+
+                    // --- Sauvegarde du l'id du compte
+                    body = new JSONObject();
+                    try
                     {
-                        try
-                        {
-                            String data = response.toString(3);
-                            JSONObject result = new JSONObject(data);
-                            String strToken = result.optString("token");
-                            TokenManager tokenManager = TokenManager.getInstance(strToken);
-
-                            //--------------------------------------------------
-                            // --- Sauvegarde du l'id du compte
-                            JSONObject body = new JSONObject();
-                            try
-                            {
-                                body.put("nom_compte", nomCompte);
-                            } catch (JSONException e)
-                            {
-                                throw new RuntimeException(e);
-                            }
-
-                            //--------------------------------------------------
-                            // --- Récupération de l'id du compte
-                            networkManager.fetchData(body, "POST", "/id", strToken, new NetworkManager.NetworkCallback()
-                            {
-                                @Override
-                                public void onSuccess(JSONObject response)
-                                {
-                                    idCompte = response.optInt("id_compte", 0);
-                                }
-
-                                @Override
-                                public void onError(String error)
-                                {
-                                    Toast.makeText(Connexion.this,
-                                            "Error: " + error,
-                                            Toast.LENGTH_SHORT).show();
-                                }
-                            });
-
-                            //--------------------------------------------------
-                            // --- On vérifie si l'on à récupéré un token
-                            if (tokenManager != null && tokenManager.getToken() != null)
-                            {
-                                Helper.changerDeFenetre(Connexion.this, MenuPrincipal.class);
-                            }
-                            else
-                            {
-                                Toast.makeText(Connexion.this,
-                                        "Error: Identifiant ou mot de passe incorrect",
-                                        Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                        catch (JSONException e)
-                        {
-                            e.printStackTrace();
-                        }
+                        body.put("nom_compte", nomCompte);
+                    }
+                    catch (JSONException e)
+                    {
+                        throw new RuntimeException(e);
                     }
 
-                    @Override
-                    public void onError(String error)
-                    {
-                        Toast.makeText(Connexion.this,
-                                "Error: " + error,
-                                Toast.LENGTH_SHORT).show();
-                    }
-                });
+                    // --- Récupération de l'id du compte
+                    JSONObject jIdCompte = networkManager.fetchDataSync(body, "POST", "/id", strToken);
+                    idCompte = jIdCompte.optInt("id_compte", 0);
+
+                    // --- Changement de fenêtre
+                    Helper.changerDeFenetre(Connexion.this, MenuPrincipal.class);
+                }
+                else
+                {
+                    Toast.makeText(Connexion.this,
+                            "[Error] - Connexion a l'API impossible ou identifiant/mot de passe incorrect",
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         //----------------------------------------------------------------------
-        // --- Gestion du bouton Mot de Passe Oublié
+        // --- Gestion du comportement du bouton Mot de Passe Oublié
         binding.motDePasseOublieBT.setEnabled(false);
         TextWatcher textWatcher1 = new TextWatcher()
         {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after)
-            {
-
-            }
-
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count)
             {
                 boolean isText = binding.indentifiantET.getText().toString().length() > 0;
                 binding.motDePasseOublieBT.setEnabled(isText);
             }
-
             @Override
-            public void afterTextChanged(Editable s)
-            {
-
-            }
+            public void afterTextChanged(Editable s) {}
         };
         binding.indentifiantET.addTextChangedListener(textWatcher1);
 
+        //----------------------------------------------------------------------
+        // --- Gestion du bouton mot de passe oublié
         binding.motDePasseOublieBT.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -209,40 +161,34 @@ public class Connexion extends AppCompatActivity
 
         //----------------------------------------------------------------------
         // --- Gestion du comportement du bouton valide
-        binding.buttonValider.setEnabled(false);
+        binding.validerBT.setEnabled(false);
         TextWatcher textWatcher2 = new TextWatcher()
         {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after)
-            {
-            }
-
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count)
             {
-                boolean isBothFieldsFilled = !binding.editTextText12.getText().toString().isEmpty() &&
-                        !binding.editTextText13.getText().toString().isEmpty();
+                boolean isBothFieldsFilled = !binding.ip3ET.getText().toString().isEmpty() &&
+                        !binding.ip4ET.getText().toString().isEmpty();
                 // Activer ou désactiver le bouton en fonction du remplissage des deux champs
-                binding.buttonValider.setEnabled(isBothFieldsFilled);
+                binding.validerBT.setEnabled(isBothFieldsFilled);
             }
-
             @Override
-            public void afterTextChanged(Editable s)
-            {
-            }
+            public void afterTextChanged(Editable s) {}
         };
-        binding.editTextText12.addTextChangedListener(textWatcher2);
-        binding.editTextText13.addTextChangedListener(textWatcher2);
+        binding.ip3ET.addTextChangedListener(textWatcher2);
+        binding.ip4ET.addTextChangedListener(textWatcher2);
 
         //----------------------------------------------------------------------
         // --- Gestion de la selection du serveur API
-        binding.buttonValider.setOnClickListener(new View.OnClickListener()
+        binding.validerBT.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                String trois = binding.editTextText12.getText().toString();
-                String quatre = binding.editTextText13.getText().toString();
+                String trois = binding.ip3ET.getText().toString();
+                String quatre = binding.ip4ET.getText().toString();
 
                 NetworkManager.setBaseUrl(trois, quatre);
 

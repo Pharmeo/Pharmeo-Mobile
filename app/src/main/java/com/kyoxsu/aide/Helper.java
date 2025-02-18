@@ -1,13 +1,11 @@
 package com.kyoxsu.aide;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-
 import androidx.viewbinding.ViewBinding;
-
-import java.lang.reflect.Method;
 //------------------------------------------------------------------------------
 /**
  * Cette classe contient les méthodes permettant de simplifier l'usage du code
@@ -15,6 +13,8 @@ import java.lang.reflect.Method;
 //------------------------------------------------------------------------------
 public abstract class Helper
 {
+    //--------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
     /**
      * La méthode permet de basculer d'une fenêtre à l'autre. Elle simplifie le basculement.
      * @param activity La classe actuelle
@@ -26,6 +26,8 @@ public abstract class Helper
         activity.startActivity(intent);
     }
 
+    //--------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
     /**
      * La méthode permet de faire le lien entre le code java et le xml
      */
