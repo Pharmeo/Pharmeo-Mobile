@@ -73,42 +73,49 @@ public class Favoris extends AppCompatActivity
                     // --- On récupère l'item selectionné
                     String selectedItem = (String) parent.getItemAtPosition(position);
 
-                    // --- On affiche la description du médicament
-                    AlertDialog.Builder builder = new AlertDialog.Builder(Favoris.this);
-                    builder.setTitle("Nom :")
-                            .setMessage("Description : ")
-                            //.setIcon(); // Rajouter l'image
-                            .setPositiveButton("Quitter", (dialog, which) -> {
-                                dialog.dismiss();
-                            })
-                            .setNegativeButton("Supprimer", (dialog, which) -> {
+                    // --- On récupère le médicament
+                    JSONObject medicamentRenvoye = networkManager.fetchDataSync(null, "GET", "/medicaments?name="+selectedItem, token);
+                    int idMedicament = 0;
+                    JSONArray medicamentArray = medicamentRenvoye.optJSONArray("medicaments");
+                    if (medicamentArray != null)
+                    {
+                        JSONObject medicament = null;
+                        try
+                        {
+                            medicament = medicamentArray.getJSONObject(0);
+                            idMedicament = medicament.optInt("identifiant", 0);
+                        }
+                        catch (JSONException e)
+                        {
+                            throw new RuntimeException(e);
+                        }
 
-                                // --- On récupère l'id du médicament
-                                JSONObject response = networkManager.fetchDataSync(null, "GET", "/medicaments?name="+selectedItem, token);
-                                int idMedicament = 0;
-                                JSONArray medicamentArray = response.optJSONArray("medicaments");
-                                try
-                                {
-                                    JSONObject medicament = medicamentArray.getJSONObject(0);
-                                    idMedicament = medicament.optInt("identifiant", 0);
-                                }
-                                catch (JSONException e)
-                                {
-                                    throw new RuntimeException(e);
-                                }
+                        // --- On affiche la description du médicament
+                        int finalIdMedicament = idMedicament;
+                        String nom = medicament.optString("nom", null);
+                        String description = medicament.optString("description", null);
+                        // ---
+                        AlertDialog.Builder builder = new AlertDialog.Builder(Favoris.this);
+                        builder.setTitle("Nom : "+nom)
+                                .setMessage("Description : "+description)
+                                //.setIcon(); // Rajouter l'image
+                                .setPositiveButton("Quitter", (dialog, which) -> {
+                                    dialog.dismiss();
+                                })
+                                .setNegativeButton("Supprimer", (dialog, which) -> {
+                                    // --- On supprime le médicament en question
+                                    networkManager.fetchDataSync(null, "DELETE", "/favoris/delete/"+Connexion.idCompte+"/"+finalIdMedicament, token);
+                                    Toast.makeText(Favoris.this,
+                                            "Suppression des favoris",
+                                            Toast.LENGTH_SHORT).show();
 
-                                // --- On supprime le médicament en question
-                                networkManager.fetchDataSync(null, "DELETE", "/favoris/delete/"+ Connexion.idCompte+"/"+idMedicament, token);
-                                Toast.makeText(Favoris.this,
-                                        "Suppression des favoris",
-                                        Toast.LENGTH_SHORT).show();
+                                    // --- On rafraîchit la liste
+                                    recreate();
+                                });
 
-                                // --- On rafraîchit la liste
-                                recreate();
-                            });
-
-                    AlertDialog dialog = builder.create();
-                    dialog.show();
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
+                    }
                 }
             });
         }
