@@ -11,13 +11,13 @@ Avec Pharmeo, vous pouvez :
 
 Pharmeo est votre compagnon idéal pour naviguer dans le monde des médicaments. Téléchargez l'application dès aujourd'hui et prenez le contrôle de votre santé avec des informations précises et accessibles à tout moment. Avec Pharmeo, la santé est à portée de main !
 
-## Informations supplémentaires pour modifier le projet
+## Informations supplémentaires du projet
 
 Informations supplémentaires pour l'utilisation de Pharmeo
 
 Pour garantir le bon fonctionnement de l'application Pharmeo, il est essentiel de respecter certains prérequis techniques. Voici les étapes à suivre :
 
-- **Utilisation de l'API :** Pharmeo nécessite l'intégration d'une API dédiée pour accéder aux données des médicaments. Vous pouvez trouver le lien vers l'API [ici](). Assurez-vous de suivre les instructions fournies pour une intégration réussie.
+- **Utilisation de l'API :** Pharmeo nécessite l'intégration d'une API dédiée pour accéder aux données des médicaments. Vous pouvez trouver le lien vers l'API [ici](https://github.com/Pharmeo/Pharmeo-api.git). Assurez-vous de suivre les instructions fournies pour une intégration réussie.
 - **Base de données :** Une base de données est indispensable pour stocker et gérer les informations relatives aux médicaments. Un fichier de création de la base, des tables et des données sera fourni avec l'application. Veillez à exécuter ce fichier pour configurer correctement votre environnement.
 - **Configuration du fichier .env :** N'oubliez pas de modifier le fichier .env de l'API. Ce fichier contient des informations cruciales qui doivent être adaptées à votre configuration, telles que les paramètres de connexion à la base de données et d'autres variables d'environnement nécessaires au bon fonctionnement de l'application.
 Développement et personnalisation de l'application
