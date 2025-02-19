@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.8.0" type="incidents">
+
+    <incident
+        id="AndroidGradlePluginVersion"
+        severity="warning"
+        message="A newer version of com.android.application than 8.8.0 is available: 8.8.1">
+        <fix-replace
+            description="Change to 8.8.1"
+            family="Update versions"
+            robot="true"
+            independent="true"
+            oldString="8.8.0"
+            replacement="8.8.1"
+            priority="0"/>
+        <location
+            file="$HOME/Desktop/programmation/testAndroidStudio/gradle/libs.versions.toml"
+            line="2"
+            column="7"
+            startOffset="17"
+            endLine="2"
+            endColumn="14"
+            endOffset="24"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.activity:activity than 1.9.2 is available: 1.10.0">
+        <fix-replace
+            description="Change to 1.10.0"
+            family="Update versions"
+            oldString="1.9.2"
+            replacement="1.10.0"
+            priority="0"/>
+        <location
+            file="$HOME/Desktop/programmation/testAndroidStudio/gradle/libs.versions.toml"
+            line="8"
+            column="12"
+            startOffset="139"
+            endLine="8"
+            endColumn="19"
+            endOffset="146"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.0">
+        <fix-replace
+            description="Change to 2.2.0"
+            family="Update versions"
+            oldString="2.1.4"
+            replacement="2.2.0"
+            priority="0"/>
+        <location
+            file="$HOME/Desktop/programmation/testAndroidStudio/gradle/libs.versions.toml"
+            line="9"
+            column="20"
+            startOffset="166"
+            endLine="9"
+            endColumn="27"
+            endOffset="173"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.fragment:fragment than 1.8.4 is available: 1.8.6">
+        <fix-replace
+            description="Change to 1.8.6"
+            family="Update versions"
+            oldString="1.8.4"
+            replacement="1.8.6"
+            priority="0"/>
+        <location
+            file="$HOME/Desktop/programmation/testAndroidStudio/gradle/libs.versions.toml"
+            line="10"
+            column="12"
+            startOffset="185"
+            endLine="10"
+            endColumn="19"
+            endOffset="192"/>
+    </incident>
+
+</incidents>

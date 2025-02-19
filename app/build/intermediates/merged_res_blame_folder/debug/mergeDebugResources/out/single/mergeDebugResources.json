@@ -1,0 +1,94 @@
+[
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-debug-32:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-34:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-debug-32:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-34:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-debug-32:/layout_menu_principal.xml.flat",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-34:/layout/menu_principal.xml"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-debug-32:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-34:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-debug-32:/layout_favoris.xml.flat",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-34:/layout/favoris.xml"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-debug-32:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-34:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-debug-32:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-34:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-debug-32:/layout_connexion.xml.flat",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-34:/layout/connexion.xml"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-debug-32:/layout_aide.xml.flat",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-34:/layout/aide.xml"
+    },
+    {
+        "merged": "com.kyoxsu.testandroidstudio.app-debug-32:/layout_favoris.xml.flat",
+        "source": "com.kyoxsu.testandroidstudio.app-main-34:/layout/favoris.xml"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-debug-32:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-34:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-debug-32:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-34:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-debug-32:/layout_mot_de_passe_oublie.xml.flat",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-34:/layout/mot_de_passe_oublie.xml"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-debug-32:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-34:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-debug-32:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-34:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-debug-32:/xml_backup_rules.xml.flat",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-34:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-debug-32:/xml_data_extraction_rules.xml.flat",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-34:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-debug-32:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-34:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-debug-32:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-34:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-debug-32:/layout_enregistrement.xml.flat",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-34:/layout/enregistrement.xml"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-debug-32:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-34:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-debug-32:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-34:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-debug-32:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-34:/drawable/ic_launcher_background.xml"
+    }
+]

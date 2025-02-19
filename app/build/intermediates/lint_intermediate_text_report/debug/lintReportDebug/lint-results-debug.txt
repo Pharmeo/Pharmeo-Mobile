@@ -1,0 +1,472 @@
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/AndroidManifest.xml:20: Error: Class referenced in the manifest, com.kyoxsu.aide.Test, was not found in the project or the libraries [MissingClass]
+            android:name="com.kyoxsu.aide.Test"
+                          ~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "MissingClass":
+   If a class is referenced in the manifest or in a layout file, it must also
+   exist in the project (or in one of the libraries included by the project.
+   This check helps uncover typos in registration names, or attempts to rename
+   or move classes without updating the XML references properly.
+
+   https://developer.android.com/guide/topics/manifest/manifest-intro.html
+
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:14: Warning: This LinearLayout should use android:layout_height="wrap_content" [ScrollViewSize]
+        android:layout_height="match_parent"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/mot_de_passe_oublie.xml:14: Warning: This LinearLayout should use android:layout_height="wrap_content" [ScrollViewSize]
+        android:layout_height="match_parent"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "ScrollViewSize":
+   ScrollView children must set their layout_width or layout_height attributes
+   to wrap_content rather than fill_parent or match_parent in the scrolling
+   dimension.
+
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/gradle/libs.versions.toml:2: Warning: A newer version of com.android.application than 8.8.0 is available: 8.8.1 [AndroidGradlePluginVersion]
+agp = "8.8.0"
+      ~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/gradle/libs.versions.toml:2: Warning: A newer version of com.android.application than 8.8.0 is available: 8.8.1 [AndroidGradlePluginVersion]
+agp = "8.8.0"
+      ~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/gradle/libs.versions.toml:2: Warning: A newer version of com.android.application than 8.8.0 is available: 8.8.1 [AndroidGradlePluginVersion]
+agp = "8.8.0"
+      ~~~~~~~
+
+   Explanation for issues of type "AndroidGradlePluginVersion":
+   This detector looks for usage of the Android Gradle Plugin where the
+   version you are using is not the current stable release. Using older
+   versions is fine, and there are cases where you deliberately want to stick
+   with an older version. However, you may simply not be aware that a more
+   recent version is available, and that is what this lint check helps find.
+
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/gradle/libs.versions.toml:8: Warning: A newer version of androidx.activity:activity than 1.9.2 is available: 1.10.0 [GradleDependency]
+activity = "1.9.2"
+           ~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/gradle/libs.versions.toml:8: Warning: A newer version of androidx.activity:activity than 1.9.2 is available: 1.10.0 [GradleDependency]
+activity = "1.9.2"
+           ~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/gradle/libs.versions.toml:8: Warning: A newer version of androidx.activity:activity than 1.9.2 is available: 1.10.0 [GradleDependency]
+activity = "1.9.2"
+           ~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/gradle/libs.versions.toml:9: Warning: A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.0 [GradleDependency]
+constraintlayout = "2.1.4"
+                   ~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/gradle/libs.versions.toml:9: Warning: A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.0 [GradleDependency]
+constraintlayout = "2.1.4"
+                   ~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/gradle/libs.versions.toml:9: Warning: A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.0 [GradleDependency]
+constraintlayout = "2.1.4"
+                   ~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/gradle/libs.versions.toml:10: Warning: A newer version of androidx.fragment:fragment than 1.8.4 is available: 1.8.6 [GradleDependency]
+fragment = "1.8.4"
+           ~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/gradle/libs.versions.toml:10: Warning: A newer version of androidx.fragment:fragment than 1.8.4 is available: 1.8.6 [GradleDependency]
+fragment = "1.8.4"
+           ~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/gradle/libs.versions.toml:10: Warning: A newer version of androidx.fragment:fragment than 1.8.4 is available: 1.8.6 [GradleDependency]
+fragment = "1.8.4"
+           ~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:28: Warning: Should use "sp" instead of "dp" for text sizes [SpUsage]
+            android:textSize="20dp" />
+            ~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/favoris.xml:22: Warning: Should use "sp" instead of "dp" for text sizes [SpUsage]
+        android:textSize="30dp" />
+        ~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/mot_de_passe_oublie.xml:26: Warning: Should use "sp" instead of "dp" for text sizes [SpUsage]
+            android:textSize="20dp" />
+            ~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SpUsage":
+   When setting text sizes, you should normally use sp, or "scale-independent
+   pixels". This is like the dp unit, but it is also scaled by the user's font
+   size preference. It is recommend you use this unit when specifying font
+   sizes, so they will be adjusted for both the screen density and the user's
+   preference.
+
+   There are cases where you might need to use dp; typically this happens when
+   the text is in a container with a specific dp-size. This will prevent the
+   text from spilling outside the container. Note however that this means that
+   the user's font size settings are not respected, so consider adjusting the
+   layout itself to be more flexible.
+
+   https://developer.android.com/training/multiscreen/screendensities.html
+
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/AndroidManifest.xml:18: Warning: Unnecessary; SDK_INT is always >= 31 [ObsoleteSdkInt]
+        tools:targetApi="31">
+        ~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/mipmap-anydpi-v26: Warning: This folder configuration (v26) is unnecessary; minSdkVersion is 33. Merge all the resources in this folder into mipmap-anydpi. [ObsoleteSdkInt]
+
+   Explanation for issues of type "ObsoleteSdkInt":
+   This check flags version checks that are not necessary, because the
+   minSdkVersion (or surrounding known API level) is already at least as high
+   as the version checked for.
+
+   Similarly, it also looks for resources in -vNN folders, such as values-v14
+   where the version qualifier is less than or equal to the minSdkVersion,
+   where the contents should be merged into the best folder.
+
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/connexion.xml:64: Warning: Use a layout_width of 0dp instead of wrap_content for better performance [InefficientWeight]
+                    android:layout_width="wrap_content"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:86: Warning: Use a layout_width of 0dp instead of wrap_content for better performance [InefficientWeight]
+                android:layout_width="wrap_content"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:148: Warning: Use a layout_width of 0dp instead of wrap_content for better performance [InefficientWeight]
+                android:layout_width="wrap_content"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:171: Warning: Use a layout_width of 0dp instead of wrap_content for better performance [InefficientWeight]
+                android:layout_width="wrap_content"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:194: Warning: Use a layout_width of 0dp instead of wrap_content for better performance [InefficientWeight]
+                android:layout_width="wrap_content"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:217: Warning: Use a layout_width of 0dp instead of wrap_content for better performance [InefficientWeight]
+                android:layout_width="wrap_content"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:240: Warning: Use a layout_width of 0dp instead of wrap_content for better performance [InefficientWeight]
+                android:layout_width="wrap_content"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "InefficientWeight":
+   When only a single widget in a LinearLayout defines a weight, it is more
+   efficient to assign a width/height of 0dp to it since it will absorb all
+   the remaining space anyway. With a declared width/height of 0dp it does not
+   have to measure its own size first.
+
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/connexion.xml:7: Warning: Possible overdraw: Root element paints background #FFFFFF with a theme that also paints a background (inferred theme is @style/Theme.TestAndroidStudio) [Overdraw]
+    android:background="#FFFFFF"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:8: Warning: Possible overdraw: Root element paints background #FFFFFF with a theme that also paints a background (inferred theme is @style/Theme.TestAndroidStudio) [Overdraw]
+    android:background="#FFFFFF"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/favoris.xml:8: Warning: Possible overdraw: Root element paints background @color/white with a theme that also paints a background (inferred theme is @style/Theme.TestAndroidStudio) [Overdraw]
+    android:background="@color/white"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/menu_principal.xml:8: Warning: Possible overdraw: Root element paints background #FFFFFF with a theme that also paints a background (inferred theme is @style/Theme.TestAndroidStudio) [Overdraw]
+    android:background="#FFFFFF"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/mot_de_passe_oublie.xml:8: Warning: Possible overdraw: Root element paints background @color/white with a theme that also paints a background (inferred theme is @style/Theme.TestAndroidStudio) [Overdraw]
+    android:background="@color/white"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "Overdraw":
+   If you set a background drawable on a root view, then you should use a
+   custom theme where the theme background is null. Otherwise, the theme
+   background will be painted first, only to have your custom background
+   completely cover it; this is called "overdraw".
+
+   NOTE: This detector relies on figuring out which layouts are associated
+   with which activities based on scanning the Java code, and it's currently
+   doing that using an inexact pattern matching algorithm. Therefore, it can
+   incorrectly conclude which activity the layout is associated with and then
+   wrongly complain that a background-theme is hidden.
+
+   If you want your custom background on multiple pages, then you should
+   consider making a custom theme with your custom background and just using
+   that theme instead of a root element background.
+
+   Of course it's possible that your custom drawable is translucent and you
+   want it to be mixed with the background. However, you will get better
+   performance if you pre-mix the background with your drawable and use that
+   resulting image or color as a custom theme background instead.
+
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/values/colors.xml:3: Warning: The resource R.color.black appears to be unused [UnusedResources]
+    <color name="black">#FF000000</color>
+           ~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/drawable/ic_launcher_background.xml:2: Warning: The resource R.drawable.ic_launcher_background appears to be unused [UnusedResources]
+<vector
+^
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/values/strings.xml:4: Warning: The resource R.string.hello_blank_fragment appears to be unused [UnusedResources]
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests =true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests =true.
+   ,
+
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml:2: Warning: The application adaptive icon is missing a monochrome tag [MonochromeLauncherIcon]
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+^
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml:2: Warning: The application adaptive roundIcon is missing a monochrome tag [MonochromeLauncherIcon]
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+^
+
+   Explanation for issues of type "MonochromeLauncherIcon":
+   If android:roundIcon and android:icon are both in your manifest, you must
+   either remove the reference to android:roundIcon if it is not needed; or,
+   supply the monochrome icon in the drawable defined by the android:roundIcon
+   and android:icon attribute.
+
+   For example, if android:roundIcon and android:icon are both in the
+   manifest, a launcher might choose to use android:roundIcon over
+   android:icon to display the adaptive app icon. Therefore, your themed
+   application iconwill not show if your monochrome attribute is not also
+   specified in android:roundIcon.
+
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/mot_de_passe_oublie.xml:43: Warning: This text field does not specify an inputType [TextFields]
+            <EditText
+             ~~~~~~~~
+
+   Explanation for issues of type "TextFields":
+   Providing an inputType attribute on a text field improves usability because
+   depending on the data to be input, optimized keyboards can be shown to the
+   user (such as just digits and parentheses for a phone number). 
+
+   The lint detector also looks at the id of the view, and if the id offers a
+   hint of the purpose of the field (for example, the id contains the phrase
+   phone or email), then lint will also ensure that the inputType contains the
+   corresponding type attributes.
+
+   If you really want to keep the text field generic, you can suppress this
+   warning by setting inputType="text".
+
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/connexion.xml:46: Warning: Missing autofillHints attribute [Autofill]
+                <EditText
+                 ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/connexion.xml:70: Warning: Missing autofillHints attribute [Autofill]
+                <EditText
+                 ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/connexion.xml:162: Warning: Missing autofillHints attribute [Autofill]
+                <EditText
+                 ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/connexion.xml:177: Warning: Missing autofillHints attribute [Autofill]
+                <EditText
+                 ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:47: Warning: Missing autofillHints attribute [Autofill]
+            <EditText
+             ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:69: Warning: Missing autofillHints attribute [Autofill]
+            <EditText
+             ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:92: Warning: Missing autofillHints attribute [Autofill]
+            <EditText
+             ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:131: Warning: Missing autofillHints attribute [Autofill]
+            <EditText
+             ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:154: Warning: Missing autofillHints attribute [Autofill]
+            <EditText
+             ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:177: Warning: Missing autofillHints attribute [Autofill]
+            <EditText
+             ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:200: Warning: Missing autofillHints attribute [Autofill]
+            <EditText
+             ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:223: Warning: Missing autofillHints attribute [Autofill]
+            <EditText
+             ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:246: Warning: Missing autofillHints attribute [Autofill]
+            <EditText
+             ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/menu_principal.xml:25: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/mot_de_passe_oublie.xml:43: Warning: Missing autofillHints attribute [Autofill]
+            <EditText
+             ~~~~~~~~
+
+   Explanation for issues of type "Autofill":
+   Specify an autofillHints attribute when targeting SDK version 26 or higher
+   or explicitly specify that the view is not important for autofill. Your app
+   can help an autofill service classify the data correctly by providing the
+   meaning of each view that could be autofillable, such as views representing
+   usernames, passwords, credit card fields, email addresses, etc.
+
+   The hints can have any value, but it is recommended to use predefined
+   values like 'username' for a username or 'creditCardNumber' for a credit
+   card number. For a list of all predefined autofill hint constants, see the
+   AUTOFILL_HINT_ constants in the View reference at
+   https://developer.android.com/reference/android/view/View.html.
+
+   You can mark a view unimportant for autofill by specifying an
+   importantForAutofill attribute on that view or a parent view. See
+   https://developer.android.com/reference/android/view/View.html#setImportant
+   ForAutofill(int).
+
+   https://developer.android.com/guide/topics/text/autofill.html
+
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/connexion.xml:46: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+                <EditText
+                 ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/connexion.xml:70: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+                <EditText
+                 ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/connexion.xml:162: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+                <EditText
+                 ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/connexion.xml:177: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+                <EditText
+                 ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:47: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+            <EditText
+             ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:69: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+            <EditText
+             ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:92: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+            <EditText
+             ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:131: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+            <EditText
+             ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:154: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+            <EditText
+             ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:177: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+            <EditText
+             ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:200: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+            <EditText
+             ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:223: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+            <EditText
+             ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:246: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+            <EditText
+             ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/menu_principal.xml:25: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+        <EditText
+         ~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/mot_de_passe_oublie.xml:43: Warning: Missing accessibility label: provide either a view with an android:labelFor that references this view or provide an android:hint [LabelFor]
+            <EditText
+             ~~~~~~~~
+
+   Explanation for issues of type "LabelFor":
+   Editable text fields should provide an android:hint or, provided your
+   minSdkVersion is at least 17, they may be referenced by a view with a
+   android:labelFor attribute.
+
+   When using android:labelFor, be sure to provide an android:text or an
+   android:contentDescription.
+
+   If your view is labeled but by a label in a different layout which includes
+   this one, just suppress this warning from lint.
+
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/connexion.xml:25: Warning: Hardcoded string "PHARMEO", should use @string resource [HardcodedText]
+                android:text="PHARMEO"
+                ~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/connexion.xml:43: Warning: Hardcoded string "      Identifiant : ", should use @string resource [HardcodedText]
+                    android:text="      Identifiant : "
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/connexion.xml:67: Warning: Hardcoded string "Mot de passe : ", should use @string resource [HardcodedText]
+                    android:text="Mot de passe : "
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/connexion.xml:88: Warning: Hardcoded string "Se connecter", should use @string resource [HardcodedText]
+                android:text="Se connecter" />
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/connexion.xml:99: Warning: Hardcoded string "Vous avez oublié votre mot de passe ?", should use @string resource [HardcodedText]
+                android:text="Vous avez oublié votre mot de passe ?"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/connexion.xml:111: Warning: Hardcoded string "Mot de passe oublié", should use @string resource [HardcodedText]
+                android:text="Mot de passe oublié" />
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/connexion.xml:122: Warning: Hardcoded string "Vous n'avez pas de compte ?", should use @string resource [HardcodedText]
+                android:text="Vous n'avez pas de compte ?"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/connexion.xml:134: Warning: Hardcoded string "Cliquez ici !", should use @string resource [HardcodedText]
+                android:text="Cliquez ici !"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/connexion.xml:147: Warning: Hardcoded string "Serveur de dev :", should use @string resource [HardcodedText]
+                android:text="Serveur de dev :"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/connexion.xml:160: Warning: Hardcoded string "192.168.", should use @string resource [HardcodedText]
+                    android:text="192.168." />
+                    ~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/connexion.xml:175: Warning: Hardcoded string ".", should use @string resource [HardcodedText]
+                    android:text="." />
+                    ~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/connexion.xml:192: Warning: Hardcoded string "Valider", should use @string resource [HardcodedText]
+                android:text="Valider" />
+                ~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:26: Warning: Hardcoded string "Formulaire d'enregistrement", should use @string resource [HardcodedText]
+            android:text="Formulaire d'enregistrement"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:44: Warning: Hardcoded string "Votre identifiant : ", should use @string resource [HardcodedText]
+                android:text="Votre identifiant : "
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:66: Warning: Hardcoded string "Votre mot de passe : ", should use @string resource [HardcodedText]
+                android:text="Votre mot de passe : "
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:89: Warning: Hardcoded string "Retaper votre mdp : ", should use @string resource [HardcodedText]
+                android:text="Retaper votre mdp : "
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:128: Warning: Hardcoded string "Prénom : ", should use @string resource [HardcodedText]
+                android:text="Prénom : "
+                ~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:151: Warning: Hardcoded string "Nom : ", should use @string resource [HardcodedText]
+                android:text="Nom : "
+                ~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:174: Warning: Hardcoded string "Email : ", should use @string resource [HardcodedText]
+                android:text="Email : "
+                ~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:197: Warning: Hardcoded string "Mobile : ", should use @string resource [HardcodedText]
+                android:text="Mobile : "
+                ~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:220: Warning: Hardcoded string "Ville : ", should use @string resource [HardcodedText]
+                android:text="Ville : "
+                ~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:243: Warning: Hardcoded string "Code Postal : ", should use @string resource [HardcodedText]
+                android:text="Code Postal : "
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/enregistrement.xml:264: Warning: Hardcoded string "Enregistrer", should use @string resource [HardcodedText]
+            android:text="Enregistrer" />
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/favoris.xml:21: Warning: Hardcoded string "Favoris", should use @string resource [HardcodedText]
+        android:text="Favoris"
+        ~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/favoris.xml:43: Warning: Hardcoded string "Retour", should use @string resource [HardcodedText]
+            android:text="Retour" />
+            ~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/menu_principal.xml:38: Warning: Hardcoded string "Rechercher", should use @string resource [HardcodedText]
+            android:text="Rechercher" />
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/menu_principal.xml:55: Warning: Hardcoded string "Type de système : ", should use @string resource [HardcodedText]
+            android:text="Type de système : " />
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/menu_principal.xml:68: Warning: Hardcoded string "Favoris", should use @string resource [HardcodedText]
+            android:text="Favoris" />
+            ~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/mot_de_passe_oublie.xml:25: Warning: Hardcoded string "Renvoie du mot de passe : ", should use @string resource [HardcodedText]
+            android:text="Renvoie du mot de passe : "
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/mot_de_passe_oublie.xml:41: Warning: Hardcoded string "Votre email : ", should use @string resource [HardcodedText]
+                android:text="Votre email : " />
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app/src/main/res/layout/mot_de_passe_oublie.xml:61: Warning: Hardcoded string "Renvoyer le mot de passe", should use @string resource [HardcodedText]
+            android:text="Renvoyer le mot de passe" />
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "HardcodedText":
+   Hardcoding text attributes directly in layout files is bad for several
+   reasons:
+
+   * When creating configuration variations (for example for landscape or
+   portrait) you have to repeat the actual text (and keep it up to date when
+   making changes)
+
+   * The application cannot be translated to other languages by just adding
+   new translations for existing string resources.
+
+   There are quickfixes to automatically extract this hardcoded string into a
+   resource lookup.
+
+1 errors, 98 warnings

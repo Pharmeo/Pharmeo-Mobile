@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "com.kyoxsu.testandroidstudio.app-mergeReleaseResources-31:/layout/menu_principal.xml",
+        "source": "com.kyoxsu.testandroidstudio.app-main-33:/layout/menu_principal.xml"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-mergeReleaseResources-31:/layout/enregistrement.xml",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-33:/layout/enregistrement.xml"
+    },
+    {
+        "merged": "com.kyoxsu.testandroidstudio.app-mergeReleaseResources-31:/layout/connexion.xml",
+        "source": "com.kyoxsu.testandroidstudio.app-main-33:/layout/connexion.xml"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-mergeReleaseResources-31:/layout/mot_de_passe_oublie.xml",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-33:/layout/mot_de_passe_oublie.xml"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-mergeReleaseResources-31:/layout/connexion.xml",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-33:/layout/connexion.xml"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-mergeReleaseResources-31:/layout/aide.xml",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-33:/layout/aide.xml"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-mergeReleaseResources-31:/layout/favoris.xml",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-33:/layout/favoris.xml"
+    },
+    {
+        "merged": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-mergeReleaseResources-31:/layout/menu_principal.xml",
+        "source": "/Users/kyoxsu/.gradle/daemon/8.10.2/com.kyoxsu.testandroidstudio.app-main-33:/layout/menu_principal.xml"
+    },
+    {
+        "merged": "com.kyoxsu.testandroidstudio.app-mergeReleaseResources-31:/layout/favoris.xml",
+        "source": "com.kyoxsu.testandroidstudio.app-main-33:/layout/favoris.xml"
+    }
+]

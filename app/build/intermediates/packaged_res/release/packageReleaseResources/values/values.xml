@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="options_array">
+        <item>Aucun système</item>
+        <item>Cardiovasculaire</item>
+        <item>Dermatologique</item>
+        <item>Digestif</item>
+        <item>Endocrinien</item>
+        <item>Fongique</item>
+        <item>Hépatique</item>
+        <item>Immunitaire</item>
+        <item>Musculo-Squelettique</item>
+        <item>Nerveux</item>
+        <item>Oncologique</item>
+        <item>Osseux</item>
+        <item>Respiratoires</item>
+        <item>Rénal</item>
+        <item>Urinaire</item>
+        <item>Vasculaire</item>
+    </string-array>
+    <color name="black">#FF000000</color>
+    <color name="ic_launcher_background">#FF0000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">Pharmeo</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <style name="Base.Theme.TestAndroidStudio" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.TestAndroidStudio" parent="Base.Theme.TestAndroidStudio"/>
+</resources>

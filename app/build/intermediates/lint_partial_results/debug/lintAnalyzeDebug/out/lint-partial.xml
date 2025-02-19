@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.8.0" type="partial_results">
+    <map id="UnsafeIntentLaunch">
+            <map id="unprotected">
+                <entry
+                    name="com.kyoxsu.testandroidstudio.Connexion"
+                    boolean="true"/>
+            </map>
+    </map>
+    <map id="UnusedResources">
+        <location id="R.color.black"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/colors.xml"
+            line="3"
+            column="12"
+            startOffset="62"
+            endLine="3"
+            endColumn="24"
+            endOffset="74"/>
+        <location id="R.drawable.ic_launcher_background"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/ic_launcher_background.xml"
+            line="2"
+            column="1"
+            startOffset="39"
+            endLine="74"
+            endColumn="10"
+            endOffset="4866"/>
+        <location id="R.string.hello_blank_fragment"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="4"
+            column="13"
+            startOffset="127"
+            endLine="4"
+            endColumn="40"
+            endOffset="154"/>
+        <entry
+            name="model"
+            string="array[options_array(U)],color[white(U),ic_launcher_background(U),black(D)],drawable[ic_launcher_background(D),ic_launcher_foreground(U)],id[main(D),textView(D),indentifiantET(U),textView2(D),motDePasseET(U),connexionBT(U),textView4(D),motDePasseOublieBT(U),textView3(D),pasDeCompteBT(U),textView5(D),textView15(D),editTextText12(U),textView16(D),editTextText13(U),buttonValider(U),textView6(D),editTextText3(U),textView7(D),editTextText4(U),textView8(D),editTextText5(U),divider2(D),textView9(D),editTextText6(U),textView10(D),editTextText7(U),textView11(D),editTextText8(U),textView12(D),editTextText9(U),textView13(D),editTextText10(U),textView14(D),editTextText11(U),buttonSave(U),textView18(D),listViewFavoris(U),button6(U),editTextText15(U),button2(U),textView17(D),spinner2(U),button5(U),list_item(D),champEmail(U),buttonRenvoyerMotDePasse(U),progressBar(D)],layout[aide(U),connexion(U),enregistrement(U),favoris(U),menu_principal(U),mot_de_passe_oublie(U)],mipmap[ic_launcher(U),ic_launcher_round(U)],string[app_name(U),hello_blank_fragment(D)],style[Theme_TestAndroidStudio(U),Base_Theme_TestAndroidStudio(U),Theme_Material3_DayNight_NoActionBar(R)],xml[data_extraction_rules(U),backup_rules(U)];37^1,39^1,3b^1,3c^2^5,3d^2^5,40^41,41^42;;;"/>
+    </map>
+
+</incidents>

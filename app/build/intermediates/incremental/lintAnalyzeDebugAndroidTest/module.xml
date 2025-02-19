@@ -1,0 +1,19 @@
+<lint-module
+    format="1"
+    dir="/Users/kyoxsu/Desktop/programmation/testAndroidStudio/app"
+    name=":app"
+    type="APP"
+    maven="testAndroidStudio:app:unspecified"
+    agpVersion="8.8.0"
+    buildFolder="build"
+    bootClassPath="/Users/kyoxsu/Library/Android/sdk/platforms/android-34/android.jar:/Users/kyoxsu/Library/Android/sdk/build-tools/35.0.0/core-lambda-stubs.jar"
+    javaSourceLevel="1.8"
+    compileTarget="android-34"
+    neverShrinking="true">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="debug"/>
+</lint-module>
