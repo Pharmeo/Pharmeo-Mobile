@@ -93,7 +93,7 @@ public class Favoris extends AppCompatActivity
                         // --- On affiche la description du médicament
                         int finalIdMedicament = idMedicament;
                         String nom = medicament.optString("nom", null);
-                        String description = medicament.optString("description", null);
+                        String description = Helper.getDescription(medicament);
                         // ---
                         AlertDialog.Builder builder = new AlertDialog.Builder(Favoris.this);
                         builder.setTitle("Nom : "+nom)

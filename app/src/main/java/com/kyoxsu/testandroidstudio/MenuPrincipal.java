@@ -270,11 +270,9 @@ public class MenuPrincipal extends AppCompatActivity
     public void showDialog(JSONObject medicament, Context context, int idMedicament)
     {
         String nom = medicament.optString("nom", null);
-        String description = "";
+        String description = Helper.getDescription(medicament);
 
-        description += medicament.optString("description", null);
-        description += medicament.optString("", null);
-
+        // --- On crée la fenêtre de dialogue
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Nom : "+nom)
                 .setMessage("Description : "+description)
@@ -286,7 +284,6 @@ public class MenuPrincipal extends AppCompatActivity
                     {
                         body.put("idMedicament", idMedicament);
                         body.put("idCompte", Connexion.idCompte);
-
                     }
                     catch (JSONException e)
                     {
