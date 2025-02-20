@@ -274,7 +274,7 @@ public class MenuPrincipal extends AppCompatActivity
 
         // --- On crée la fenêtre de dialogue
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Nom : "+nom)
+        builder.setTitle(nom)
                 .setMessage("Description : "+description)
                 //.setIcon();
                 .setPositiveButton("Favoris", (dialog, which) ->
@@ -293,10 +293,26 @@ public class MenuPrincipal extends AppCompatActivity
                     // --- On ajoute le favoris
                     NetworkManager networkManager = new NetworkManager();
                     JSONObject response = networkManager.fetchDataSync(body, "POST", "/addfavoris", this.token);
-                    // TODO : modifier pour faire un test pas plus appronfondi
-                    if (response.length() > 0)
+                    if (response != null)
                     {
-                        Toast.makeText(MenuPrincipal.this, "Ajout aux favoris", Toast.LENGTH_SHORT).show();
+                        System.out.println(response);
+
+                        String status = response.optString("status", null);
+                        if (status != null)
+                        {
+                            if (status.equals("erreur"))
+                            {
+                                Toast.makeText(MenuPrincipal.this, "[INFOS] - Vous avez déjà ajouté ce médicament à vos favoris", Toast.LENGTH_SHORT).show();
+                            }
+                            else if (status.equals("ok"))
+                            {
+                                Toast.makeText(MenuPrincipal.this, "[OK] - Ajout aux favoris", Toast.LENGTH_SHORT).show();
+                            }
+                            else
+                            {
+                                Toast.makeText(MenuPrincipal.this, "[ERREUR] - Une erreur non identifiée est survenue", Toast.LENGTH_SHORT).show();
+                            }
+                        }
                     }
                     dialog.dismiss();
                 })

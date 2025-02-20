@@ -72,7 +72,7 @@ public class MotDePasseOublie extends AppCompatActivity
                 // --- Envoie de la requête
                 NetworkManager networkManager = new NetworkManager();
                 String token = TokenManager.getInstance(null).getToken();
-                JSONObject response = networkManager.fetchDataSync(body, "POST", "/sendmail", token);
+                networkManager.fetchDataSync(body, "POST", "/sendmail", token);
 
                 // --- Changement de fenêtre
                 Helper.changerDeFenetre(MotDePasseOublie.this, Connexion.class);

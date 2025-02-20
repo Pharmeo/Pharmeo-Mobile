@@ -83,17 +83,12 @@ public abstract class Helper
             for (int i=0; i<jsonArrayInfos.length(); i++)
             {
                 JSONObject pharmacie = jsonArrayInfos.optJSONObject(i);
+                int quantite = pharmacie.optInt("quantite", 0);
                 String nomPharmacie = pharmacie.optString("nom", null);
-                if (i == 0)
-                {
-                    disponibilites += nomPharmacie;
-                }
-                else
-                {
-                    disponibilites += ", "+nomPharmacie;
-                }
+                // ---
+                disponibilites += "\n - "+nomPharmacie+" : "+quantite;
             }
-            description += "\n\nDisponibilites : "+disponibilites;
+            description += "\n\nDisponibilités : "+disponibilites;
         }
         return description;
     }
